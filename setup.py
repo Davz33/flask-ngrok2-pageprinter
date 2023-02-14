@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flask-ngrok2-pageprinter",
-    version="0.2.5",
-    author="Mohamed Rashad, Davide Vitiello",
+    version="0.2.6",
+    author="Davide Vitiello",
     description="A successor to to the successor to flask-ngrok for demo Flask apps using ngrok with ngrok tunnel info at disposal at runtime.",
     long_description=long_description,
     long_description_content_type="text/markdown",
