@@ -96,7 +96,7 @@ def start_ngrok(port, auth_token, logpath):
     print(f" * Traffic stats available on http://127.0.0.1:4040")
 
 
-def run_with_ngrok(app, auth_token=None):
+def run_with_ngrok(app, logpath, auth_token=None):
     """
     The provided Flask app will be securely exposed to the public internet via ngrok when run,
     and the its ngrok address will be printed to stdout
