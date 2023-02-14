@@ -18,5 +18,5 @@ setuptools.setup(
     ],
     keywords='flask ngrok2 pageprinter demo',
     install_requires=['Flask>=0.8', 'requests'],
-    py_modules=['flask_ngrok2']
+    py_modules=['flask_ngrok2_pp']
 )
