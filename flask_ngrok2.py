@@ -88,8 +88,10 @@ def _download_file(url):
     return download_path
 
 
-def start_ngrok(port, auth_token):
+def start_ngrok(port, auth_token, logpath):
     ngrok_address = _run_ngrok(port, auth_token)
+    with open(logpath, 'wb') as f:
+        json.dump({'tunnel_address': ngrok_address}, ensure_ascii=False)
     print(f" * Running on {ngrok_address}")
     print(f" * Traffic stats available on http://127.0.0.1:4040")
 
@@ -105,7 +107,7 @@ def run_with_ngrok(app, auth_token=None):
 
     def new_run(*args, **kwargs):
         port = kwargs.get("port", 5000)
-        thread = Timer(1, start_ngrok, args=(port, auth_token))
+        thread = Timer(1, start_ngrok, args=(port, auth_token, logpath))
         thread.setDaemon(True)
         thread.start()
         old_run(*args, **kwargs)
