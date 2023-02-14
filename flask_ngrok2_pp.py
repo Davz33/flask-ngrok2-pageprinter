@@ -91,7 +91,7 @@ def _download_file(url):
 def start_ngrok(port, auth_token, logpath):
     ngrok_address = _run_ngrok(port, auth_token)
     with open(logpath, 'wb') as f:
-        json.dump({'tunnel_address': ngrok_address}, ensure_ascii=False)
+        json.dump({'tunnel_address': ngrok_address}, f, ensure_ascii=False)
     print(f" * Running on {ngrok_address}")
     print(f" * Traffic stats available on http://127.0.0.1:4040")
 
