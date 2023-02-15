@@ -15,9 +15,10 @@ pip install git+https://github.com/Davz33/flask-ngrok2-pageprinter
 ## Quickstart
 1. Import with ```from flask_ngrok2_pp import run_with_ngrok```
 2. Add `run_with_ngrok(app,logpath,auth_token)` to make your Flask app available upon running  
-3. At server start, the log at logpath will contain the ngrok tuttel address. You can then json.load-it and make use of it for http/https request within jupyter notebooks.
+3. At server start, the log at logpath will contain the ngrok tunnel address. You can then json.load-it and make use of it for http/https request within jupyter notebooks.
 
-To make full sense of this package, you will hav to run the following as python command from a .py external script.
+To make full sense of this package, you need to run the following as python command from a .py external script:
+If you want to self-contain every piece of your notebook, just `!touch script.py` and write into from your j.notebook cell.
 ```python
 # flask_ngrok_example.py
 from flask import Flask
