@@ -114,6 +114,11 @@ def run_with_ngrok(app, logpath, auth_token=None):
 
     app.run = new_run
 
+def just_ngrok(logpath, port, auth_token=None):
+
+    thread = Timer(1, start_ngrok, args=(port, auth_token, logpath))
+    thread.setDaeomn(True)
+    thread.start()
 
 if __name__ == "__main__":
     print(_check_ngrok_available())
